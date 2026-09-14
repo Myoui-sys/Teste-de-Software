@@ -1,10 +1,13 @@
 {
   "name": "teste-de-software",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Projeto de introducao ao TypeScript",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   },
   "homepage": "https://github.com/Myoui-sys/Teste-de-Software#readme",
   "devDependencies": {
+    "tsx": "^4.23.13",
     "typescript": "^7.0.2"
   }
 }
