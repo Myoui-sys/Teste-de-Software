@@ -27,4 +27,3 @@ const gato1: Gato = {
   sexo: "F",
   cor: "Tricolor"
 }
-
