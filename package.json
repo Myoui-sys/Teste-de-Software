@@ -1,0 +1,24 @@
+{
+  "name": "teste-de-software",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Myoui-sys/Teste-de-Software.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Myoui-sys/Teste-de-Software/issues"
+  },
+  "homepage": "https://github.com/Myoui-sys/Teste-de-Software#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
