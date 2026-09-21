@@ -12,12 +12,17 @@ let newJeans = {
 
 // Função assíncrona
 async function cafe(): Promise<string> {
-    return "café pronto";
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("café pronto");
+        }, 2000);
+    });
 }
 
 async function cafeexemplo() {
     const resultado = cafe();
     console.log(resultado);
+
     const resultadoAguardando = await cafe();
     console.log(resultadoAguardando);
 }
