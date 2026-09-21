@@ -9,6 +9,7 @@ let newJeans = {
     integrante4: "Haerin",
     integrante5: "Hyein"
 };
+// Função assíncrona
 async function cafe() {
     return "café pronto";
 }

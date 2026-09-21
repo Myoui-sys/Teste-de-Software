@@ -10,6 +10,7 @@ let newJeans = {
     integrante5: "Hyein"
 };
 
+// Função assíncrona
 async function cafe(): Promise<string> {
     return "café pronto";
 }
