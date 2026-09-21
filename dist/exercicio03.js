@@ -9,3 +9,13 @@ let newJeans = {
     integrante4: "Haerin",
     integrante5: "Hyein"
 };
+async function cafe() {
+    return "café pronto";
+}
+async function cafeexemplo() {
+    const resultado = cafe();
+    console.log(resultado);
+    const resultadoAguardando = await cafe();
+    console.log(resultadoAguardando);
+}
+cafeexemplo();
