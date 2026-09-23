@@ -7,7 +7,7 @@ let newJeans = {
     integrante2: "Hanni",
     integrante3: "Danielle",
     integrante4: "Haerin",
-    integrante5: "Hyein",
+    integrante5: "Hyein"
 };
 // Função assíncrona
 async function cafe() {
@@ -24,34 +24,49 @@ async function cafeexemplo() {
     console.log(resultadoAguardando);
 }
 cafeexemplo();
-// GET - Buscar endereço pelo CEP
-// Request: CEP pela URL
-// Response: dados do endereço
-// Finalidade: consultar um endereço pelo CEP
-async function buscarCep(cep) {
-    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-    const dados = (await response.json());
+async function buscarCep() {
+    const response = await fetch("https://viacep.com.br/ws/01001000/json/");
+    const dados = await response.json();
     return dados;
 }
-async function exemploCep() {
-    const resultado = await buscarCep("01001000");
-    console.log(resultado);
+async function buscarCepExemplo() {
+    const dados = await buscarCep();
+    console.log(dados);
 }
-exemploCep();
-// GET - Buscar CEP pelo endereço
-// Request: UF, cidade e rua pela URL
-// Response: lista de endereços
-// Finalidade: encontrar CEPs pelo endereço
-async function buscarEndereco(uf, cidade, rua) {
-    const response = await fetch(`https://viacep.com.br/ws/${uf}/${cidade}/${rua}/json/`);
-    const dados = (await response.json());
+buscarCepExemplo();
+async function criarCep() {
+    const response = await fetch("https://viacep.com.br/ws/01001000/json/", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            cep: "01001000",
+            logradouro: "Praça da Sé",
+            complemento: "",
+            unidade: "",
+            bairro: "Sé",
+            localidade: "São Paulo",
+            uf: "SP",
+            estado: "São Paulo",
+            regiao: "Sudeste",
+            ibge: "3550308",
+            gia: "1004",
+            ddd: "11",
+            siafi: "7107"
+        })
+    });
+    const dados = await response.json();
     return dados;
 }
-async function exemploEndereco() {
-    const resultado = await buscarEndereco("PE", "Recife", "Boa Vista");
-    console.log(resultado);
+async function apagarcep() {
+    const response = await fetch("https://viacep.com.br/ws/01001000/json/", {
+        method: "delete"
+    });
+    if (response.ok) {
+        console.log("Cep apagado com sucesso");
+    }
+    else {
+        console.log("Erro ao apagar o cep");
+    }
 }
-exemploEndereco();
-// POST
-// A ViaCEP não possui endpoint POST.
-// Ela utiliza GET para consultar informações de CEP.
