@@ -10,14 +10,14 @@ describe("calculadora", () => {
     it ("deve subtrair dois numeros", () => {
         const resultado = subtracao(3, 1);
         expect(resultado).toBe(2);
-    })
+    });
     it ("deve dividir dois numeros", () => {
         const resultado = divisao(10, 2);
         expect(resultado).toBe(5);
-    })
+    });
     it ("deve multiplicar dois numeros", () => {
         const resultado = multiplicacao(5, 2);
         expect(resultado).toBe(10);
-    })
+    });
     
 });
